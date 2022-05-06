@@ -42,7 +42,7 @@ class TodoController extends AbstractController
             //si oui
         $todos = $session ->get('todos');
         if (isset($todos[$name])){
-            $this -> addFlash('danger',"Le todo $name existe déjà !" );}
+            $this -> addFlash('error',"Le todo $name existe déjà !" );}
         else{
             $todos[$name]= $content;
             $session ->set('todos',$todos);
@@ -65,7 +65,7 @@ class TodoController extends AbstractController
             //si oui
             $todos = $session ->get('todos');
             if (!isset($todos[$name])){
-                $this -> addFlash('danger',"Le todo $name n'existe pas dans la liste" );}
+                $this -> addFlash('error',"Le todo $name n'existe pas dans la liste" );}
             else{
                 $todos[$name]= $content;
                 $session ->set('todos',$todos);
@@ -76,7 +76,7 @@ class TodoController extends AbstractController
         //sinon
         else{
             //Déclancher une erreur et redirection vers le controlleur initial (index)
-            $this -> addFlash('danger',"La liste des todos n'est pas encore initialisée" );
+            $this -> addFlash('error',"La liste des todos n'est pas encore initialisée" );
         }
         return $this ->redirectToRoute('todo');
     }
@@ -88,7 +88,7 @@ class TodoController extends AbstractController
             //si oui
             $todos = $session ->get('todos');
             if (!isset($todos[$name])){
-                $this -> addFlash('danger',"Le todo $name n'existe pas dans la liste" );}
+                $this -> addFlash('error',"Le todo $name n'existe pas dans la liste" );}
             else{
                 unset($todos[$name]);
                 $session ->set('todos',$todos);
