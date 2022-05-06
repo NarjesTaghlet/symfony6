@@ -53,7 +53,7 @@ class TodoController extends AbstractController
         //sinon
         else{
             //Déclancher une erreur et redirection vers le controlleur initial (index)
-            $this -> addFlash('danger',"La liste des todos n'est pas encore initialisée" );
+            $this -> addFlash('error',"La liste des todos n'est pas encore initialisée" );
         }
         return $this ->redirectToRoute('todo');
 }
@@ -99,7 +99,7 @@ class TodoController extends AbstractController
         //sinon
         else{
             //Déclancher une erreur et redirection vers le controlleur initial (index)
-            $this -> addFlash('danger',"La liste des todos n'est pas encore initialisée" );
+            $this -> addFlash('error',"La liste des todos n'est pas encore initialisée" );
         }
         return $this ->redirectToRoute('todo');
     }
