@@ -23,8 +23,7 @@ class TodoController extends AbstractController
                 'cours' => 'Lire le cours de Symfony',
                 'correction' => 'Corriger les erreurs de compilation de cet exercice',
                 'Rendre' => 'Rendre les comptes Rendus',
-                'Lire' => 'Lire la documentation php',
-                'TD' => 'Finir le TD algèbre -_- ',
+                 'Td'=>'Finir Td teleinformatique'
             ];
             $session -> set('todos',$todos);
             $this -> addFlash('info',"La table de todo a été initialisée !" );
